@@ -2,6 +2,15 @@
 
 let cfg = import ./cfg.nix; in
 {
+  home.packages = with pkgs; [
+    google-cloud-sdk
+    htop
+    stack
+    nodejs
+    sbt
+    openjdk11
+  ];
+
   programs.git = {
     enable = true;
     userName = "${cfg.name}";
@@ -66,13 +75,12 @@ let cfg = import ./cfg.nix; in
         '';
 
         plugins = with pkgs.vimPlugins; [
-          vim-plug
+          coc-nvim
           sensible
           airline
           vim-nix
           syntastic
           ctrlp
-          deoplete-nvim
           fzf-vim
           editorconfig-vim
           gruvbox
@@ -80,12 +88,9 @@ let cfg = import ./cfg.nix; in
           nerdtree
           supertab
           vim-scala
-          vim-plug
-          LanguageClient-neovim
           vim-stylish-haskell
           hlint-refactor-vim
           haskell-vim
-          vim-haskellConcealPlus
         ];
     };
 
