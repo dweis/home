@@ -6,7 +6,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "norm";
-      plugins = [ "aws" "ssh-agent" ];
+      plugins = [ "aws" "ssh-agent" "vi-mode" ];
     };
     envExtra = ''
       EDITOR="vim"
@@ -19,6 +19,7 @@
     };
     initExtra = ''
       if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
+      unsetopt BEEP
     '';
   };
 }
