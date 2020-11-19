@@ -7,6 +7,7 @@ let cfg = import ./cfg.nix; in
     htop
     stack
     nodejs
+    yarn
     sbt
     openjdk11
   ];
@@ -226,6 +227,7 @@ let cfg = import ./cfg.nix; in
         nerdcommenter
         nerdtree
         # Scala
+        coc-metals
         vim-scala
         # Haskell
         haskell-vim
@@ -255,5 +257,20 @@ let cfg = import ./cfg.nix; in
 
   home.file.".haskeline".text = ''
     editMode: Vi
+  '';
+
+  home.file.".config/nvim/coc-settings.json".text = ''
+    {
+      "coc.preferences.formatOnSaveFiletypes": ["scala"],
+      "metals.scalafmtConfigPath": "project/.scalafmt.conf",
+      "languageserver": {
+        "haskell": {
+          "command": "haskell-language-server-wrapper",
+          "args": ["--lsp"],
+          "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+          "filetypes": ["haskell", "lhaskell"]
+        }
+      }
+    }
   '';
 }
