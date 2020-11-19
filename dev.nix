@@ -10,6 +10,7 @@ let cfg = import ./cfg.nix; in
     yarn
     sbt
     openjdk11
+    elixir
   ];
 
   programs.git = {
@@ -233,6 +234,8 @@ let cfg = import ./cfg.nix; in
         haskell-vim
         vim-stylish-haskell
         hlint-refactor-vim
+        # Elixir
+        vim-elixir
       ];
   };
 
