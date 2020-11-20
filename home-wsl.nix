@@ -1,7 +1,15 @@
 { config, pkgs, home, ... }:
 
 {
-  imports = [ ./dev.nix ./shell.nix ];
+  imports = [
+    ./core.nix
+    ./dev.nix
+    ./emacs.nix
+    ./haskell.nix
+    ./scala.nix
+    ./shell.nix
+    ./vim.nix
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

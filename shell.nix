@@ -14,6 +14,8 @@
     '';
     shellAliases = {
       ll = "ls -lh";
+      new-scala = "sbt new scala/scala-seed.g8";
+      new-haskell = "f(){ stack new \"$1\" ~/.stack/template.hsfiles };f";
     };
     initExtra = ''
       if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
