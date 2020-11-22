@@ -6,6 +6,7 @@
     extraPackages = (epkgs: with epkgs; [
       # Evil mode
       evil
+      evil-leader
       # Themes
       powerline
       airline-themes

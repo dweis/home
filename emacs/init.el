@@ -1,15 +1,29 @@
-(require 'package)
-(setq package-archives nil)
-(setq package-enable-at-startup nil)
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+
+(setq indent-tabs-mode nil)
+(setq default-tab-width 2)
+
+(setq inhibit-startup-message t) 
+(setq initial-scratch-message nil)
 
 (require 'evil)
 (evil-mode 1)
 
-(require 'powerline)
-(require 'airline-themes)
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader "\\")
+(evil-leader/set-key
+  "b" 'switch-to-buffer
+  "w" 'save-buffer)
+
 (require 'zenburn-theme)
 
 (load-theme 'zenburn t)
+
+(require 'powerline)
+(require 'airline-themes)
 (load-theme 'airline-zenburn t)
 
 (require 'nix-mode)

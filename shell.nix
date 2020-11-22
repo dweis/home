@@ -11,6 +11,7 @@
     envExtra = ''
       EDITOR="vim"
       TERM="xterm-256color"
+      TMUX_TMPDIR=/tmp
     '';
     shellAliases = {
       ll = "ls -lh";
