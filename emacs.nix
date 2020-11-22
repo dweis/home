@@ -3,15 +3,17 @@
 {
   programs.emacs = {
     enable = true;
+    extraPackages = (epkgs: with epkgs; [
+      evil
+      powerline
+      haskell-mode
+      js2-mode
+      nix-mode
+      scala-mode
+      gruvbox-theme
+      airline-themes
+    ]);
   };
 
-  home.file.".emacs.d" = {
-      source = builtins.fetchGit {
-      url = "https://github.com/syl20bnr/spacemacs";
-      ref = "develop";
-    };
-    recursive = true;
-  };
-
-  home.file.".spacemacs".source = ./files/spacemacs.el;
+  home.file.".emacs.d/init.el".source = ./emacs/init.el;
 }

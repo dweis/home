@@ -6,9 +6,9 @@
     ./dev.nix
     ./emacs.nix
     ./haskell.nix
+    ./nvim.nix
     ./scala.nix
     ./shell.nix
-    ./vim.nix
   ];
 
   # Let Home Manager install and manage itself.

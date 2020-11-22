@@ -5,7 +5,7 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    extraConfig = builtins.readFile ./files/vimrc;
+    extraConfig = builtins.readFile ./nvim/vimrc;
 
     plugins = with pkgs.vimPlugins; [
       sensible

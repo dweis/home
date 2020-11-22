@@ -20,5 +20,5 @@ let cfg = import ./cfg.nix; in
         category: Development
   '';
 
-  home.file.".stack/template.hsfiles".source = ./files/template.hsfiles;
+  home.file.".stack/template.hsfiles".source = ./haskell/template.hsfiles;
 }
