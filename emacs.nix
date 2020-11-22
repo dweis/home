@@ -4,14 +4,17 @@
   programs.emacs = {
     enable = true;
     extraPackages = (epkgs: with epkgs; [
+      # Evil mode
       evil
+      # Themes
       powerline
+      airline-themes
+      zenburn-theme
+      # Language support
       haskell-mode
       js2-mode
       nix-mode
       scala-mode
-      gruvbox-theme
-      airline-themes
     ]);
   };
 
