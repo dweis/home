@@ -85,8 +85,9 @@ in haskellPackages.developPackage {
       buildTools = (attrs.buildTools or []) ++ [
         haskellPackages.cabal-install
         haskellPackages.haskell-language-server
-        haskellPackages.stylish-haskell
         haskellPackages.hlint
+        haskellPackages.hoogle
+        haskellPackages.stylish-haskell
         pkgs.nixfmt
       ];
     });
